@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas de Gabriel</title>
+    <style>
+        .corner-text {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: url('villa-de-leyva.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            color: #f2f2f2;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            border: 5px solid black;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .box {
+            background-color: #ffffff;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Recuadros para Matemáticas y Física, Sociales y Biología */
+        .top-row {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Recuadros para Pastoral y Fundamentos centrados abajo */
+        .bottom-row {
+            grid-column: span 3;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Espacio vacío */
+        .empty-box {
+            visibility: hidden;
+        }
+
+        /* Movimiento de fondo con el mouse */
+        body.moving-background {
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-text">
+        Gabriel Cárdenas y Laura Camargo<br>
+        Curso: 9°B
+    </div>
+
+    <!-- Título bonito centrado -->
+    <h1>Página Web</h1>
+
+    <div class="container">
+        <div class="top-row">
+            <div class="box">
+                <a href="https://gb3692.github.io/Matem-ticas-y-F-sica/" target="_blank">Matemáticas y Física</a>
+            </div>
+            <div class="box">
+                <a href="https://gb3692.github.io/Sociales/" target="_blank">Sociales</a>
+            </div>
+            <div class="box">
+                <a href="https://gb3692.github.io/Biologia/" target="_blank">Biología</a>
+            </div>
+        </div>
+
+        <div class="bottom-row">
+            <div class="empty-box"></div> <!-- Cuadro vacío -->
+            <div class="box">
+                <a href="https://gb3692.github.io/Pastoral/" target="_blank">Pastoral</a>
+            </div>
+            <div class="box">
+                <a href="https://gb3692.github.io/Fundamentos/" target="_blank">Fundamentos</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const x = (event.clientX / window.innerWidth) * 100;
+            const y = (event.clientY / window.innerHeight) * 100;
+
+            document.body.style.backgroundPosition = `${x}% ${y}%`;
+        });
+    </script>
+
+</body>
+</html>
